@@ -1,0 +1,63 @@
+{
+  "name": "alienamigo-startkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --build",
+    "zip": "gulp deployZip --build",
+    "ftp": "gulp deployFtp --build",
+    "fonts": "gulp fontsTask",
+    "svgSprite": "gulp svgSpriteTask",
+    "pngSprite": "gulp pngSpriteTask",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Ryzhov",
+  "license": "MIT",
+  "@commentDevDependencies":[
+    "webp-converter не трогать! Работает только в версии 2.2.3"
+  ],
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "fs": "^0.0.1-security",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-fonter": "latest",
+    "gulp-fonter-fix": "latest",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-if": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-newer": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-pug": "latest",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-svg-sprite": "latest",
+    "gulp-ttf2woff2": "latest",
+    "gulp-util": "latest",
+    "gulp-version-number": "latest",
+    "gulp-webp": "latest",
+    "gulp-webp-html-nosvg": "latest",
+    "gulp-webpcss": "latest",
+    "gulp-zip": "latest",
+    "gulp.spritesmith": "^6.12.1",
+    "merge-stream": "^2.0.0",
+    "sass": "latest",
+    "swiper": "latest",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-ftp": "latest",
+    "webp-converter": "2.2.3",
+    "webpack": "latest",
+    "webpack-stream": "latest"
+  },
+  "dependencies": {
+    "normalize.css": "latest"
+  }
+}

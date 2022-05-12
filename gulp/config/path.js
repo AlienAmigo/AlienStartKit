@@ -1,0 +1,56 @@
+import * as nodePath from "path";
+const rootFolder = nodePath.basename(nodePath.resolve());
+
+const buildFolder = `./build`;
+const srcFolder = `./src`;
+const svgSpriteFolder = `${srcFolder}/sprite-svg`;
+const pngSpriteFolder = `${srcFolder}/sprite-png`;
+const imgFolder = `${srcFolder}/img`;
+const fontsFolder = `${srcFolder}/fonts`;
+const scssFolder = `${srcFolder}/scss`;
+
+export const path = {
+  build: {
+    favicon: `${buildFolder}/favicon/`,
+    assets: `${buildFolder}/assets/`,
+    js: `${buildFolder}/js/`,
+    css: `${buildFolder}/css/`,
+    html: `${buildFolder}/`,
+    pug: `${buildFolder}/`,
+    img: `${buildFolder}/img/`,
+    fonts: `${buildFolder}/fonts/`,
+  },
+  src: {
+    favicon: `${srcFolder}/favicon/`,
+    js: `${srcFolder}/js/script.js`,
+    img: [
+      `${imgFolder}/**/*.{jpg,jpeg,png,gif,webp}`,
+      `!${imgFolder}/stack/*.*`
+    ],
+    svg: `${srcFolder}/img/**/*.svg`,
+    scss: `${scssFolder}/style.scss`,
+    html: `${srcFolder}/pages/**/*.html`,
+    pug: `${srcFolder}/pages/**/*.pug`,
+    files: `${srcFolder}/files/**/*.*`,
+    svgicons: `${svgSpriteFolder}/*.svg`,
+  },
+  watch: {
+    js: `${srcFolder}/**/*.js`,
+    scss: `${scssFolder}/**/*.scss`,
+    html: `${srcFolder}/**/*.html`,
+    pug: `${srcFolder}/**/*.pug`,
+    img: `${imgFolder}/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
+    files: `${srcFolder}/files/**/*.*`,
+    svgicons: `${svgSpriteFolder}/*.svg`,
+  },
+  clean: buildFolder,
+  buildFolder: buildFolder,
+  srcFolder: srcFolder,
+  rootFolder: rootFolder,
+  imgFolder: imgFolder,
+  svgSpriteFolder: svgSpriteFolder,
+  pngSpriteFolder: pngSpriteFolder,
+  fontsFolder: fontsFolder,
+  scssFolder: scssFolder,
+  ftp: `test`,
+};
