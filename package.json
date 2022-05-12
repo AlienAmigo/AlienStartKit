@@ -9,6 +9,7 @@
     "build": "gulp build --build",
     "zip": "gulp deployZip --build",
     "ftp": "gulp deployFtp --build",
+    "favicon": "gulp favicon",
     "fonts": "gulp fontsTask",
     "svgSprite": "gulp svgSpriteTask",
     "pngSprite": "gulp pngSpriteTask",
