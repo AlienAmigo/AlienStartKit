@@ -11,8 +11,9 @@
     "ftp": "gulp deployFtp --build",
     "favicon": "gulp favicon",
     "fonts": "gulp fontsTask",
-    "svgSprite": "gulp svgSpriteTask",
+    "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
     "pngSprite": "gulp pngSpriteTask",
+    "svgSprite": "gulp svgSpriteTask",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter Ryzhov",
@@ -61,6 +62,8 @@
     "webpack-stream": "latest"
   },
   "dependencies": {
-    "normalize.css": "latest"
+    "glob-exec": "^0.1.1",
+    "normalize.css": "latest",
+    "pug-lint": "^2.6.0"
   }
 }
