@@ -33,10 +33,10 @@ export const settings = {
 
   // fonts
   fonts: {
-    convertFonts: true, // использовать ковенртер шрифтов gulp
+    convertFonts: false, // использовать ковенртер шрифтов gulp
     copyFonts: true,
     copyFontFormat: "eot,ttf,woff,woff2", // копировать шрифты из папки fonts выбранных форматов
-    addFontsToCSss: true, // автоматически добавлять шрифты в css
+    addFontsToCSss: false, // автоматически добавлять шрифты в css
     fontDisplay: "swap",
   },
 

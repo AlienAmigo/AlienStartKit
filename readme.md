@@ -100,13 +100,17 @@ npm start deploy # отправка последнего коммита
 - gulp-webpcss
 - gulp-autoprefixer
 - normalize.css
+- gulp-postcss
+- postcss-sass
+- postcss-flexbugs-fixes
+- postcss-animation
 <!-- взаимосвязаны -->
 - gulp-group-css-media-queries
 - webp-converter@2.2.3
 #### JS
 - webpack
 - webpack-stream
-- swiper
+<!-- - swiper -->
 #### Images
 - gulp-webp
 - gulp-imagemin
