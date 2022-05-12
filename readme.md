@@ -98,10 +98,9 @@ npm start deploy # отправка последнего коммита
 - gulp-sass
 - gulp-clean-css
 - gulp-webpcss
-- gulp-autoprefixer
+- autoprefixer
 - normalize.css
 - gulp-postcss
-- postcss-sass
 - postcss-flexbugs-fixes
 - postcss-animation
 <!-- взаимосвязаны -->
@@ -110,7 +109,6 @@ npm start deploy # отправка последнего коммита
 #### JS
 - webpack
 - webpack-stream
-<!-- - swiper -->
 #### Images
 - gulp-webp
 - gulp-imagemin

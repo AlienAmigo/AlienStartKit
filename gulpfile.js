@@ -30,6 +30,7 @@ import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
+import { favicon } from './gulp/tasks/favicon.js';
 import { otfToTtf, ttfToWoff, copyFonts, fontsStyle } from './gulp/tasks/fonts.js';
 import { svgSpriteTask } from './gulp/tasks/svgSprite.js';
 import { pngSpriteTask } from './gulp/tasks/pngSprite.js';
@@ -65,6 +66,7 @@ const mainTasks = gulp.series(
   pug,
   scss,
   js,
+  favicon,
   images,
   pngSpriteTask,
   svgSpriteTask
@@ -85,6 +87,7 @@ export { deployFtp };
 export { fontsTask };
 export { svgSpriteTask };
 export { pngSpriteTask };
+export { favicon };
 
 
 

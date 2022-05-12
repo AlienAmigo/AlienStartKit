@@ -21,7 +21,7 @@ export const path = {
     fonts: `${buildFolder}/fonts/`,
   },
   src: {
-    favicon: `${srcFolder}/favicon/`,
+    favicon: `${srcFolder}/favicon/*.{jpg,jpeg,png,svg,webp,gif,ico,webmanifest}`,
     js: `${srcFolder}/js/script.js`,
     img: [
       `${imgFolder}/**/*.{jpg,jpeg,png,gif,webp}`,
@@ -35,6 +35,7 @@ export const path = {
     svgicons: `${svgSpriteFolder}/*.svg`,
   },
   watch: {
+    favicon: `${srcFolder}/favicon/*.{jpg,jpeg,png,svg,webp,gif,ico,webmanifest}`,
     js: `${srcFolder}/**/*.js`,
     scss: `${scssFolder}/**/*.scss`,
     html: `${srcFolder}/**/*.html`,
