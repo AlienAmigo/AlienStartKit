@@ -14,18 +14,26 @@
     "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\"",
     "pngSprite": "gulp pngSpriteTask",
     "svgSprite": "gulp svgSpriteTask",
+    "stylelint": "stylelint \"src/scss/**/*.scss\"",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter Ryzhov",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlienAmigo/AlienStartKit.git"
+  },
   "@commentDevDependencies": [
     "webp-converter не трогать! Работает только в версии 2.2.3"
   ],
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "latest",
     "browser-sync": "latest",
     "del": "latest",
     "fs": "^0.0.1-security",
+    "glob-exec": "latest",
     "gulp": "latest",
     "gulp-clean-css": "latest",
     "gulp-file-include": "latest",
@@ -50,20 +58,24 @@
     "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
-    "gulp.spritesmith": "^6.12.1",
-    "merge-stream": "^2.0.0",
-    "postcss-animation": "^0.0.12",
-    "postcss-flexbugs-fixes": "^5.0.2",
+    "gulp.spritesmith": "latest",
+    "merge-stream": "latest",
+    "postcss-animation": "latest",
+    "postcss-flexbugs-fixes": "latest",
+    "pug-lint": "latest",
     "sass": "latest",
-    "vinyl-buffer": "^1.0.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "latest",
+    "stylelint-selector-bem-pattern": "latest",
+    "vinyl-buffer": "latest",
     "vinyl-ftp": "latest",
     "webp-converter": "2.2.3",
     "webpack": "latest",
     "webpack-stream": "latest"
   },
   "dependencies": {
-    "glob-exec": "^0.1.1",
-    "normalize.css": "latest",
-    "pug-lint": "^2.6.0"
+    "normalize.css": "latest"
   }
 }
