@@ -138,3 +138,5 @@ npm start deploy # отправка последнего коммита
 - gulp-util
 - vinyl-buffer
 - merge-stream
+- husky
+- lint-staged
