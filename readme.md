@@ -133,7 +133,9 @@ npm start deploy # отправка последнего коммита
 - webpack
 - webpack-stream
 - gulp-eslint
-
+- babel-eslint
+- eslint-config-prettier
+- eslint-plugin-prettier
 #### Fonts
 
 - fs
