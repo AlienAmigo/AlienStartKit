@@ -91,8 +91,10 @@ npm start deploy # отправка последнего коммита
 - gulp-replace
 - gulp-notify
 - gulp-plumber
+- bemlint
 #### Pug
 - gulp-pug
+- pug-lint
 #### CSS / SCSS
 - sass
 - gulp-sass
@@ -103,6 +105,12 @@ npm start deploy # отправка последнего коммита
 - gulp-postcss
 - postcss-flexbugs-fixes
 - postcss-animation
+- stylelint-config-prettier,
+- stylelint-config-prettier-scss
+- stylelint-config-standard-scss
+- stylelint-order
+- stylelint-prettier
+- stylelint-selector-bem-pattern
 <!-- взаимосвязаны -->
 - gulp-group-css-media-queries
 - webp-converter@2.2.3
