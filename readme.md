@@ -1,5 +1,7 @@
 # Стартовый проект для вёрстки
+
 ---
+
 Обязательно добавьте поддержку [editorconfig](https://editorconfig.org/#download) в ваш редактор кода.
 
 ```bash
@@ -14,8 +16,11 @@ npm run stylelint # проверить scss-файлы
 Перед коммитом происходит автопроверка файлов. Если проверка выявила ошибки, они будут показаны в терминале.
 
 ---
+
 ## О сборке:
+
 ### В составе:
+
 - [Sass (SCSS)](https://sass-lang.com)
 - [PostCSS](https://postcss.org)
   - [Autoprefixer](https://github.com/postcss/autoprefixer)
@@ -40,18 +45,20 @@ npm run stylelint # проверить scss-файлы
 > **usePug** — использовать pug, заместо html (по умолчанию: `true`)
 >
 > **options** — флаги, если нужно отключить какую-то часть сборки (например, в случае полной ненадобности js или сторонних модулей (Vendors)):
->* **copyAssets** — отключает копирование дополнительных файлов проекта
->* **processJs** — отключает создание `/js/script.min.js` и отслеживание изменений в js-файлах
->* **copyJsVendors** — отключает обработку дополнительных js-модулей и создание `/js/vendors.min.js`
-> при **`processJs`**` = false` и **`copyJsVendors`**` = false` папка `/js` не создается
+>
+> - **copyAssets** — отключает копирование дополнительных файлов проекта
+> - **processJs** — отключает создание `/js/script.min.js` и отслеживание изменений в js-файлах
+> - **copyJsVendors** — отключает обработку дополнительных js-модулей и создание `/js/vendors.min.js`
+>   при **`processJs`**` = false` и **`copyJsVendors`**` = false` папка `/js` не создается
 
 ### Fonts (Шрифты)
+
 Все шрифты лежат в папке `/fonts`.
 
 Конвертер шрифтов: https://www.fontsquirrel.com/tools/webfont-generator
 или google-webfonts-helper: https://google-webfonts-helper.herokuapp.com/fonts
 
-#### Памятка по *font-weight*:
+#### Памятка по _font-weight_:
 
 - **100** — Thin (Hairline)
 - **200** — Extra Light (Ultra Light)
@@ -64,12 +71,14 @@ npm run stylelint # проверить scss-файлы
 - **900** — Black (Heavy)
 
 ### gh-pages
+
 Модуль `gh-pages` для публикации результатов верстки уже установлен
 
 ```bash
 npx gulp deploy  # инициализация
 npm start deploy # отправка последнего коммита
 ```
+
 ---
 
 ## Справочная информация
@@ -82,9 +91,11 @@ npm start deploy # отправка последнего коммита
 - [Шпаргалка по подключению gh-pages к проекту](https://nicothin.pro/page/gh-pages)
 
 ---
+
 ## Установленные плагины
 
 #### HTML
+
 - gulp-file-include
 - gulp-webp-html-nosvg
 - gulp-version-number
@@ -92,10 +103,14 @@ npm start deploy # отправка последнего коммита
 - gulp-notify
 - gulp-plumber
 - bemlint
+
 #### Pug
+
 - gulp-pug
 - pug-lint
+
 #### CSS / SCSS
+
 - sass
 - gulp-sass
 - gulp-clean-css
@@ -114,24 +129,39 @@ npm start deploy # отправка последнего коммита
 <!-- взаимосвязаны -->
 - gulp-group-css-media-queries
 - webp-converter@2.2.3
+
 #### JS
+
 - webpack
 - webpack-stream
-#### Images
-- gulp-webp
-- gulp-imagemin
-- gulp.spritesmith
+- gulp-eslint
+
 #### Fonts
+
 - fs
 - gulp-fonter-fix
 - gulp-ttf2woff2
+
+#### Images
+
+- gulp-webp
+- gulp-imagemin
+- gulp.spritesmith
+
 #### SVG
+
 - gulp-svg-sprite
+
 #### ZIP
+
 - gulp-zip
+
 #### FTP
+
 - vinyl-ftp
+
 #### Misc
+
 - del
 - gulp-newer
 - gulp-if
