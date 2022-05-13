@@ -6,20 +6,20 @@ import { path } from './gulp/config/path.js';
 // импорт общих плагинов
 import { plugins } from './gulp/config/plugins.js';
 // настройки проекта
-import { settings } from './gulp/settings.js'
+import { settings } from './gulp/settings.js';
 // импорт вспомогательных функций
-import * as func from './gulp/config/functions.js'
+import * as func from './gulp/config/functions.js';
 
 // Передвем значения в глобальную переменную
 global.app = {
   isBuild: process.argv.includes('--build'),
   isDev: !process.argv.includes('--build'),
-  path: path,
-  gulp: gulp,
-  plugins: plugins,
-  settings: settings,
-  func: func,
-}
+  path,
+  gulp,
+  plugins,
+  settings,
+  func
+};
 
 // Импорт задач
 import { assets } from './gulp/tasks/assets.js';
@@ -29,9 +29,15 @@ import { pug } from './gulp/tasks/pug.js';
 import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
+import { vendors } from './gulp/tasks/vendors.js';
 import { images } from './gulp/tasks/images.js';
 import { favicon } from './gulp/tasks/favicon.js';
-import { otfToTtf, ttfToWoff, copyFonts, fontsStyle } from './gulp/tasks/fonts.js';
+import {
+  otfToTtf,
+  ttfToWoff,
+  copyFonts,
+  fontsStyle
+} from './gulp/tasks/fonts.js';
 import { svgSpriteTask } from './gulp/tasks/svgSprite.js';
 import { pngSpriteTask } from './gulp/tasks/pngSprite.js';
 import { zip } from './gulp/tasks/zip.js';
@@ -52,8 +58,11 @@ function watcher() {
   }
   gulp.watch(path.watch.img, images);
   if (app.settings.svg.processSvgSprite) {
-    gulp.watch(path.watch.svgicons, svgSpriteTask)
-  };
+    gulp.watch(path.watch.svgicons, svgSpriteTask);
+  }
+  if (app.settings.png.processPngSprite) {
+    gulp.watch(path.watch.pngicons, pngSpriteTask);
+  }
 }
 
 // Послеовательная обработка шрифтов
@@ -66,11 +75,12 @@ const mainTasks = gulp.series(
   pug,
   scss,
   js,
+  vendors,
   favicon,
   images,
   pngSpriteTask,
   svgSpriteTask
-  );
+);
 
 // Сценарии выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
@@ -88,8 +98,7 @@ export { fontsTask };
 export { svgSpriteTask };
 export { pngSpriteTask };
 export { favicon };
-
-
+export { vendors };
 
 // Выполненение сценария по умолчанию
 gulp.task('default', dev);

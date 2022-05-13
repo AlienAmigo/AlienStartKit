@@ -133,6 +133,7 @@ npm start deploy # отправка последнего коммита
 - webpack
 - webpack-stream
 - gulp-eslint
+- @babel/eslint-parser
 - babel-eslint
 - eslint-config-prettier
 - eslint-plugin-prettier

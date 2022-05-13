@@ -1,8 +1,8 @@
-import * as nodePath from "path";
+import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 
-const buildFolder = `./build`;
-const srcFolder = `./src`;
+const buildFolder = './build';
+const srcFolder = './src';
 const svgSpriteFolder = `${srcFolder}/sprite-svg`;
 const pngSpriteFolder = `${srcFolder}/sprite-png`;
 const imgFolder = `${srcFolder}/img`;
@@ -18,7 +18,7 @@ export const path = {
     html: `${buildFolder}/`,
     pug: `${buildFolder}/`,
     img: `${buildFolder}/img/`,
-    fonts: `${buildFolder}/fonts/`,
+    fonts: `${buildFolder}/fonts/`
   },
   src: {
     favicon: `${srcFolder}/favicon/*.{jpg,jpeg,png,svg,webp,gif,ico,webmanifest}`,
@@ -32,7 +32,7 @@ export const path = {
     html: `${srcFolder}/pages/**/*.html`,
     pug: `${srcFolder}/pages/**/*.pug`,
     files: `${srcFolder}/files/**/*.*`,
-    svgicons: `${svgSpriteFolder}/*.svg`,
+    svgicons: `${svgSpriteFolder}/*.svg`
   },
   watch: {
     favicon: `${srcFolder}/favicon/*.{jpg,jpeg,png,svg,webp,gif,ico,webmanifest}`,
@@ -43,15 +43,16 @@ export const path = {
     img: `${imgFolder}/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
     files: `${srcFolder}/files/**/*.*`,
     svgicons: `${svgSpriteFolder}/*.svg`,
+    pngicons: `${pngSpriteFolder}/**/*.png`
   },
   clean: buildFolder,
-  buildFolder: buildFolder,
-  srcFolder: srcFolder,
-  rootFolder: rootFolder,
-  imgFolder: imgFolder,
-  svgSpriteFolder: svgSpriteFolder,
-  pngSpriteFolder: pngSpriteFolder,
-  fontsFolder: fontsFolder,
-  scssFolder: scssFolder,
-  ftp: `test`,
+  buildFolder,
+  srcFolder,
+  rootFolder,
+  imgFolder,
+  svgSpriteFolder,
+  pngSpriteFolder,
+  fontsFolder,
+  scssFolder,
+  ftp: 'test'
 };

@@ -1,3 +1,17 @@
-import * as flsFunctions from './modules/functions';
+import * as flsFunctions from './modules/functions.js';
 
-flsFunctions.isWebp();
+function ready(fn) {
+  if (
+    document.attachEvent
+      ? document.readyState === 'complete'
+      : document.readyState !== 'loading'
+  ) {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+ready(() => {
+  flsFunctions.isWebp();
+  console.log('DOM ready');
+});

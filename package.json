@@ -14,6 +14,7 @@
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "favicon": "gulp favicon",
     "fonts": "gulp fontsTask",
+    "vendors": "gulp vendors",
     "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\" --color",
     "lint-staged": "lint-staged --no-stash",
     "pngSprite": "gulp pngSpriteTask",
@@ -39,10 +40,10 @@
     "webp-converter не трогать! Работает только в версии 2.2.3"
   ],
   "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "@prettier/plugin-pug": "latest",
     "autoprefixer": "latest",
-    "babel-eslint": "^10.1.0",
     "bemlint": "latest",
     "browser-sync": "latest",
     "del": "latest",
@@ -90,6 +91,7 @@
     "stylelint-order": "latest",
     "stylelint-prettier": "latest",
     "stylelint-selector-bem-pattern": "latest",
+    "svg4everybody": "^2.1.9",
     "vinyl-buffer": "latest",
     "vinyl-ftp": "latest",
     "webp-converter": "2.2.3",
