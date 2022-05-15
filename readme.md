@@ -137,6 +137,7 @@ npm start deploy # отправка последнего коммита
 - babel-eslint
 - eslint-config-prettier
 - eslint-plugin-prettier
+- gulp-concat
 #### Fonts
 
 - fs

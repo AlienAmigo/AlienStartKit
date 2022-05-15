@@ -1,12 +1,9 @@
 import webpack from 'webpack-stream';
 
 export const vendors = (cb) => {
-  if (
-    app.settings.assets.copyAssets &&
-    !app.func.fileExist(app.settings.assets.addAssets)
-  ) {
-    app.gulp
-      .src(app.settings.assets.addAssets)
+  if (app.settings.js.copyJsVendors && app.settings.js.addVendors.length) {
+    return app.gulp
+      .src(app.settings.js.addVendors, { sourcemaps: app.isDev })
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({

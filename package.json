@@ -31,10 +31,10 @@
     "url": "https://github.com/AlienAmigo/AlienStartKit.git"
   },
   "lint-staged": {
-    "*.(js|jsx|ts|tsx)": "eslint --color --fix",
+    "*.(js|jsx|ts|tsx)": "eslint --color",
     "*.{js,pug,md}": "editorconfig-cli",
     "*.pug": "pug-lint",
-    "*.(css|scss|sass|less)": "stylelint --color --fix"
+    "*.(css|scss|sass|less)": "stylelint --color"
   },
   "@commentDevDependencies": [
     "webp-converter не трогать! Работает только в версии 2.2.3"
@@ -53,6 +53,7 @@
     "glob-exec": "latest",
     "gulp": "latest",
     "gulp-clean-css": "latest",
+    "gulp-concat": "^2.6.1",
     "gulp-eslint": "latest",
     "gulp-file-include": "latest",
     "gulp-fonter": "latest",

@@ -125,7 +125,7 @@
     "block-scoped-var": "error",
     "class-methods-use-this": "error",
     "complexity": "off",
-    "consistent-return": "error",
+    "consistent-return": "warn",
     "curly": ["error", "all"],
     "default-case": "error",
     "dot-location": ["error", "property"],
@@ -147,7 +147,7 @@
     "no-caller": "error",
     "no-case-declarations": "error",
     "no-div-regex": "off",
-    "no-else-return": "error",
+    "no-else-return": "warn",
     "no-empty-function": [
       "error",
       {
