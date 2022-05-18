@@ -1,18 +1,4 @@
 @use 'sass:math'; /* stylelint-disable-line at-rule-no-unknown */
-//
-@mixin font($font_name, $file_name, $weight: 0, $style: normal) {
-  @font-face {
-    font-family: $font_name;
-    font-display: swap;
-    src:
-      url('../fonts/#{$file_name}.woff') format('woff2'),
-      url('../fonts/#{$file_name}.woff2') format('woff');
-    @if $weight != 0 {
-      font-weight: #{$weight};
-    }
-    font-style: #{$style};
-  }
-}
 
 // псевдоблок
 @mixin pseudo($display: block, $pos: absolute, $content: '') {
@@ -40,38 +26,22 @@
     border-right: $size solid transparent;
     border-top: $size solid $color;
     margin-top: 0 - round(math.div($size, 2.5));
-  } @else if $direction == up {
+  } @else if $direction == up { /* stylelint-disable-line block-closing-brace-newline-after */
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
     margin-bottom: 0 - round(math.div($size, 2.5));
-  } @else if $direction == right {
+  } @else if $direction == right { /* stylelint-disable-line block-closing-brace-newline-after */
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
     margin-right: -$size;
-  } @else if $direction == left {
+  } @else if $direction == left { /* stylelint-disable-line block-closing-brace-newline-after */
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-right: $size solid $color;
     margin-left: -$size;
   }
-}
-
-// защита о текстового переполнения
-@mixin text-overflow() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// защита о текстового переполнения (многострочное)
-@mixin paragraph-text-overflow($lines-count: 3) {
-  display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix */
-  overflow: hidden;
-  -webkit-line-clamp: $lines-count; /* stylelint-disable-line property-no-vendor-prefix */
-  -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
-  text-overflow: ellipsis;
 }
 
 // стилизация скролла эл-та
@@ -119,13 +89,6 @@
   /* stylelint-enable */
 }
 
-// текст с градиентом
-@mixin gradient-text($gradient) {
-  background: $gradient;
-  -webkit-background-clip: text; /* stylelint-disable-line property-no-vendor-prefix */
-  -webkit-text-fill-color: transparent; /* stylelint-disable-line property-no-vendor-prefix */
-}
-
 // фигурный фон блоков
 @mixin polygonBackground($polygon, $color, $zIndex: -1, $position: relative) {
   position: $position;
@@ -160,6 +123,7 @@
   &:hover {
     overflow: hidden;
 
+    /* stylelint-disable-next-line plugin/selector-bem-pattern */
     & img {
       /* stylelint-disable-line plugin/selector-bem-pattern */
       transform: scale(1.025);

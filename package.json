@@ -8,15 +8,15 @@
     "start": "gulp",
     "build": "gulp build --build",
     "bemlint": "bemlint build/*.html --mod='--'",
+    "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\" --color",
     "stylelint": "stylelint \"src/scss/**/*.scss\" --color",
     "eslint": "eslint \"src/js/**/*.{js,jsx,ts,tsx}\"",
     "stylelint-check": "stylelint-config-prettier-check",
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
+    "lint-staged": "lint-staged --no-stash",
     "favicon": "gulp favicon",
     "fonts": "gulp fontsTask",
     "vendors": "gulp vendors",
-    "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\" --color",
-    "lint-staged": "lint-staged --no-stash",
     "pngSprite": "gulp pngSpriteTask",
     "svgSprite": "gulp svgSpriteTask",
     "zip": "gulp deployZip --build",
@@ -81,6 +81,7 @@
     "husky": "latest",
     "lint-staged": "latest",
     "merge-stream": "latest",
+    "path": "^0.12.7",
     "postcss-animation": "latest",
     "postcss-flexbugs-fixes": "latest",
     "prettier": "latest",
@@ -100,6 +101,7 @@
     "webpack-stream": "latest"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "normalize.css": "latest"
   }
 }

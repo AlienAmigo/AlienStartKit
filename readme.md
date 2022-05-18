@@ -7,10 +7,27 @@
 ```bash
 npm i             # установить зависимости
 npm start         # запустить сервер разработки (остановить: Ctrl+C)
-npm build         # запустить сборку проекта
+npm build         # запустить production-сборку проекта
+#-----------------------------------------------------------------------
+# проверка кода
 npm run bemlint   # проверить html-файлы папки build на соответствие BEM
 npm run puglint   # проверить pug-файлы
 npm run stylelint # проверить scss-файлы
+npm lint-staged   # проверка файлов перед отправкой коммита
+#-----------------------------------------------------------------------
+# скрипты для задач, которые запускаются при старте сервера разработки,
+# но не включены в watcher (или могут быть отлкючены в настройках),
+# в виду редкой надобности. На случай, если по ходу работы нужно
+# что-то добавить/убрать без перезапуска сервера
+npm run favicon   # пересобрать фавиконки
+npm run fonts     # пересобрать шрифты
+npm run vendors   # пересобрать vendors.min.js
+npm run pngSprite # пересобрать png-спрайт
+npm run svgSprite # пересобрать svg-спрайт
+#-----------------------------------------------------------------------
+# дополнительно
+npm run zip       # создание zip-архива проекта
+npm run ftp       # отправка проекта на ftp (настройки в settings.js)
 ```
 
 Перед коммитом происходит автопроверка файлов. Если проверка выявила ошибки, они будут показаны в терминале.
@@ -32,9 +49,9 @@ npm run stylelint # проверить scss-файлы
 - [pug-lint](https://github.com/pugjs/pug-lint)
 - [Prettier](https://prettier.io)
 - [Babel](https://babeljs.io)
-- [GitPages](https://pages.github.com)
 - [gulp.spritesmith](https://github.com/twolfson/gulp.spritesmith)
 - [gulp-svg-sprite](https://www.npmjs.com/package/gulp-svg-sprite)
+- [gitPages](https://pages.github.com)
 
 ### файл options.js
 
@@ -173,3 +190,5 @@ npm start deploy # отправка последнего коммита
 - husky
 - lint-staged
 - @htmlacademy/editorconfig-cli
+- gulp-pages
+- path

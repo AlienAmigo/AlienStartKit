@@ -1,6 +1,6 @@
-import fs from "fs";
-import fonter from "gulp-fonter-fix";
-import ttf2woff2 from "gulp-ttf2woff2";
+import fs from 'fs';
+import fonter from 'gulp-fonter-fix';
+import ttf2woff2 from 'gulp-ttf2woff2';
 
 export const otfToTtf = (cb) => {
   if (app.settings.fonts.convertFonts) {
@@ -11,22 +11,23 @@ export const otfToTtf = (cb) => {
         .pipe(
           app.plugins.plumber(
             app.plugins.notify.onError({
-              title: "FONTS",
-              message: "Error: <%= error.message %>",
+              title: 'FONTS',
+              message: 'Error: <%= error.message %>'
             })
           )
         )
         // Конвертируем в .ttf
         .pipe(
           fonter({
-            formats: ["ttf"],
+            formats: ['ttf']
           })
         )
         // Выгружаем в исходную папку
         .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
+        .pipe(app.plugins.browserSync.stream())
     );
   } else {
-    cb()
+    cb();
   }
 };
 export const ttfToWoff = (cb) => {
@@ -38,15 +39,15 @@ export const ttfToWoff = (cb) => {
         .pipe(
           app.plugins.plumber(
             app.plugins.notify.onError({
-              title: "FONTS",
-              message: "Error: <%= error.message %>",
+              title: 'FONTS',
+              message: 'Error: <%= error.message %>'
             })
           )
         )
         // Конвертируем в .woff
         .pipe(
           fonter({
-            formats: ["woff"],
+            formats: ['woff']
           })
         )
         // Выгружаем в папку с результатом
@@ -71,41 +72,41 @@ export const fontsStyle = (callback) => {
     // Файл стилей подключения шрифтов
     let fontsFile = `${app.path.srcFolder}/scss/_fonts.scss`;
     // Проверяем существуют ли файлы шрифтов
-    fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
+    fs.readdir(app.path.build.fonts, (err, fontsFiles) => {
       if (fontsFiles) {
         // Проверяем существует ли файл стилей для подключения шрифтов
         if (!fs.existsSync(fontsFile)) {
           // Если файла нет, создаем его
-          fs.writeFile(fontsFile, "", cb);
+          fs.writeFile(fontsFile, '', cb);
           let newFileOnly;
-          for (var i = 0; i < fontsFiles.length; i++) {
+          for (let i = 0; i < fontsFiles.length; i++) {
             // Записываем подключения шрифтов в файл стилей
-            let fontFileName = fontsFiles[i].split(".")[0];
+            let fontFileName = fontsFiles[i].split('.')[0];
             if (newFileOnly !== fontFileName) {
-              let fontName = fontFileName.split("-")[0]
-                ? fontFileName.split("-")[0]
+              let fontName = fontFileName.split('-')[0]
+                ? fontFileName.split('-')[0]
                 : fontFileName;
-              let fontWeight = fontFileName.split("-")[1]
-                ? fontFileName.split("-")[1]
+              let fontWeight = fontFileName.split('-')[1]
+                ? fontFileName.split('-')[1]
                 : fontFileName;
-              if (fontWeight.toLowerCase() === "thin") {
+              if (fontWeight.toLowerCase() === 'thin') {
                 fontWeight = 100;
-              } else if (fontWeight.toLowerCase() === "extralight") {
+              } else if (fontWeight.toLowerCase() === 'extralight') {
                 fontWeight = 200;
-              } else if (fontWeight.toLowerCase() === "light") {
+              } else if (fontWeight.toLowerCase() === 'light') {
                 fontWeight = 300;
-              } else if (fontWeight.toLowerCase() === "medium") {
+              } else if (fontWeight.toLowerCase() === 'medium') {
                 fontWeight = 500;
-              } else if (fontWeight.toLowerCase() === "semibold") {
+              } else if (fontWeight.toLowerCase() === 'semibold') {
                 fontWeight = 600;
-              } else if (fontWeight.toLowerCase() === "bold") {
+              } else if (fontWeight.toLowerCase() === 'bold') {
                 fontWeight = 700;
               } else if (
-                fontWeight.toLowerCase() === "extrabold" ||
-                fontWeight.toLowerCase() === "heavy"
+                fontWeight.toLowerCase() === 'extrabold' ||
+                fontWeight.toLowerCase() === 'heavy'
               ) {
                 fontWeight = 800;
-              } else if (fontWeight.toLowerCase() === "black") {
+              } else if (fontWeight.toLowerCase() === 'black') {
                 fontWeight = 900;
               } else {
                 fontWeight = 400;
@@ -121,14 +122,13 @@ export const fontsStyle = (callback) => {
         } else {
           // Если файл есть, выводим сообщение
           console.log(
-            "Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!"
+            'Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!'
           );
         }
       }
     });
 
     return app.gulp.src(`${app.path.srcFolder}`);
-    function cb() {}
   } else {
     callback();
   }
@@ -136,10 +136,13 @@ export const fontsStyle = (callback) => {
 
 export const copyFonts = (cb) => {
   if (app.settings.fonts.copyFonts) {
-    return app.gulp.src(`${app.path.fontsFolder}/**/*.{${app.settings.fonts.copyFontFormat}}`)
+    return app.gulp
+      .src(
+        `${app.path.fontsFolder}/**/*.{${app.settings.fonts.copyFontFormat}}`
+      )
       .pipe(app.gulp.dest(app.path.build.fonts))
-      .pipe(app.plugins.browserSync.stream())
+      .pipe(app.plugins.browserSync.stream());
   } else {
     cb();
   }
-}
+};

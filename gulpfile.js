@@ -42,6 +42,7 @@ import { svgSpriteTask } from './gulp/tasks/svgSprite.js';
 import { pngSpriteTask } from './gulp/tasks/pngSprite.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
+import { deployGHPages } from './gulp/tasks/deployGHPages.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -87,12 +88,14 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZip = gulp.series(reset, mainTasks, zip);
 const deployFtp = gulp.series(reset, mainTasks, ftp);
+const deploy = gulp.series(deployGHPages);
 
 // экспорт сценариев
 export { dev };
 export { build };
 export { deployZip };
 export { deployFtp };
+export { deploy };
 // задачи, для которых watcher не стоит или отключаемый, и может понадобиться обновить, не перезапуская сборку
 export { fontsTask };
 export { svgSpriteTask };
