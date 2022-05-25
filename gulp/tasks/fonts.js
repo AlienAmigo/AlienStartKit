@@ -77,7 +77,7 @@ export const fontsStyle = (callback) => {
         // Проверяем существует ли файл стилей для подключения шрифтов
         if (!fs.existsSync(fontsFile)) {
           // Если файла нет, создаем его
-          fs.writeFile(fontsFile, '', cb);
+          fs.writeFile(fontsFile, '', callback);
           let newFileOnly;
           for (let i = 0; i < fontsFiles.length; i++) {
             // Записываем подключения шрифтов в файл стилей
@@ -114,7 +114,7 @@ export const fontsStyle = (callback) => {
               fs.appendFile(
                 fontsFile,
                 `@font-face {\n\tfont-family: ${fontName};\n\tfont-display: ${app.settings.fonts.fontDisplay};\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\r\n`,
-                cb
+                callback
               );
               newFileOnly = fontFileName;
             }

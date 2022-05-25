@@ -61,14 +61,19 @@ export const scss = () => {
       //   overrideBrowserlist: [app.settings.css.overrideBrowserlist],
       //   cascade: true,
       // }))
-      // несжатый дубль файла стилей
       .pipe(
         app.plugins.if(
           app.isBuild && app.settings.css.uncompressedCssCopy,
           gropCssMediaQueries()
         )
       )
-      .pipe(app.gulp.dest(app.path.build.css))
+      // несжатый дубль файла стилей
+      .pipe(
+        app.plugins.if(
+          !app.isBuild && app.settings.css.uncompressedCssCopy,
+          app.gulp.dest(app.path.build.css)
+        )
+      )
       .pipe(cleanCSS())
       .pipe(
         rename({

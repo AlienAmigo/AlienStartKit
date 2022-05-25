@@ -38,7 +38,7 @@ export const path = {
     favicon: `${srcFolder}/favicon/*.{jpg,jpeg,png,svg,webp,gif,ico,webmanifest}`,
     js: `${srcFolder}/**/*.js`,
     scss: `${scssFolder}/**/*.scss`,
-    html: `${srcFolder}/**/*.html`,
+    html: `${srcFolder}/**/*.{html,htm}`,
     pug: `${srcFolder}/**/*.pug`,
     img: `${imgFolder}/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
     files: `${srcFolder}/files/**/*.*`,
