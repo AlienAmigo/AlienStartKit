@@ -129,6 +129,7 @@ npm start deploy # отправка последнего коммита
 - sass
 - gulp-sass
 - gulp-clean-css
+- gulp-sourcemaps
 - gulp-webpcss
 - autoprefixer
 - normalize.css
