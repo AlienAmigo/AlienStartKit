@@ -103,5 +103,8 @@ export { pngSpriteTask };
 export { favicon };
 export { vendors };
 
+// вывод настроек
+console.log(`build-mode: ${app.isBuild}\ndev-mode: ${app.isDev}`);
+
 // Выполненение сценария по умолчанию
 gulp.task('default', dev);

@@ -1,18 +1,29 @@
 .page {
   font-family: $font-family;
+  font-size: $font-size;
 
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    &::selection {
-    }
   }
 
-  &__inner {}
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-  &__content {}
+  &__inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
 
-  &__footer-wrapper {}
+  &__content {
+    flex: 1;
+  }
+
+  // &__footer-wrapper {}
 }

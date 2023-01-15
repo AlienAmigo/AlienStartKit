@@ -1,6 +1,7 @@
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
+import sourcemaps from 'gulp-sourcemaps';
 
 import cleanCSS from 'gulp-clean-css'; // Сжатие CSS файла
 import webpcss from 'gulp-webpcss';
@@ -15,7 +16,8 @@ const sass = gulpSass(dartSass);
 export const scss = () => {
   return (
     app.gulp
-      .src(app.path.src.scss, { sourcemaps: !app.isDev })
+      .src(app.path.src.scss)
+      .pipe(app.plugins.if(app.isDev, sourcemaps.init()))
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -56,11 +58,6 @@ export const scss = () => {
           })
         )
       )
-      // .pipe(autoPrefixer({
-      //   grid: true,
-      //   overrideBrowserlist: [app.settings.css.overrideBrowserlist],
-      //   cascade: true,
-      // }))
       .pipe(
         app.plugins.if(
           app.isBuild && app.settings.css.uncompressedCssCopy,
@@ -80,6 +77,7 @@ export const scss = () => {
           extname: '.min.css'
         })
       )
+      .pipe(app.plugins.if(app.isDev, sourcemaps.write('')))
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browserSync.stream())
   );

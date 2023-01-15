@@ -1,5 +1,23 @@
 @use 'sass:math'; /* stylelint-disable-line at-rule-no-unknown */
 
+// media queries
+@mixin devices($breakpoint) { //the name of the mixin is devices
+
+  @if $breakpoint == tablet {
+
+    @media only screen and (max-width: $screen-lg) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+
+    @media only screen and (max-width: $screen-sm) {
+      @content;
+    }
+  }
+}
+
 // псевдоблок
 @mixin pseudo($display: block, $pos: absolute, $content: '') {
   content: $content;
