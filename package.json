@@ -89,7 +89,6 @@
     "prettier-eslint": "^14.0.3",
     "pug-lint": "latest",
     "sass": "latest",
-    "stylelint-config-prettier": "latest",
     "stylelint-config-standard-scss": "latest",
     "stylelint-order": "latest",
     "stylelint-prettier": "latest",
