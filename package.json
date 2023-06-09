@@ -10,7 +10,7 @@
     "bemlint": "bemlint build/*.html --mod='--'",
     "puglint": "glob-exec \"src/**/*.pug\" -- \"pug-lint {{files.join(' ')}}\" --color",
     "stylelint": "stylelint \"src/scss/**/*.scss\" --color",
-    "eslint": "eslint \"src/js/**/*.{js,jsx,ts,tsx}\"",
+    "eslint": "eslint \"src/js/**/*.{js,jsx,ts,tsx}\" --color",
     "stylelint-check": "stylelint-config-prettier-check",
     "stylelint-scss-check": "stylelint-config-prettier-scss-check",
     "lint-staged": "lint-staged --no-stash",
@@ -22,7 +22,9 @@
     "zip": "gulp deployZip --build",
     "ftp": "gulp deployFtp --build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "initDeploy" : "npx gulp deploy",
+    "deploy": "npm start deploy"
   },
   "author": "Peter Ryzhov",
   "license": "MIT",
